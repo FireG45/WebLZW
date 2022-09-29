@@ -12,4 +12,9 @@
     <Folder Include="wwwroot\DecompressedFiles\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <PackageReference Include="jQuery" Version="3.6.0" />
+    <PackageReference Include="Microsoft.jQuery.Unobtrusive.Ajax" Version="3.2.6" />
+  </ItemGroup>
+
 </Project>

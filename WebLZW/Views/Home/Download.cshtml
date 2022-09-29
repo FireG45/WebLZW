@@ -1,13 +1,10 @@
 ﻿@{
-
     ViewData["Title"] = "Page";
     string path = (string)ViewData["Path"];
+    string typeFileString = (string)ViewData["TypeFile"];
 }
 
-<div class="text-center">
-
-<h1>Click Link to download file</h1><br /><br />
-
-    <a asp-action="DownloadFile" asp-controller="Home" asp-route-path=@path>Download</a>
-
+<div>
+<h1>Скачать @typeFileString файл</h1><br /><br />
+    <a asp-action="DownloadFile" asp-controller="Home" asp-route-path=@path> Скачать </a>
 </div>

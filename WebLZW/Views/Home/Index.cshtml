@@ -1,27 +1,42 @@
-﻿<div class="container px-4 py-5">
-    <h2 class="pb-2 border-bottom">Выберите файл для загрузки</h2>
-    <div class="row g-4 py-5 row-cols-1 row-cols-lg-2">
-        <div class="col d-flex align-items-start">
-            <div>
-                <h3 class="fs-2">Сжатие файла</h3>
-                <p>Выберете файл который хотите сжать и нажмите кнопку Загрузить.</p>
-                <form asp-action="AddFile" asp-controller="Home" asp-route-mode="0" method="post" enctype="multipart/form-data">
-                    <input type="file" name="uploadedFile" />
-                    <br><br>
-                    <input type="submit" value="Загрузить" />
-                </form>
-            </div>
-        </div>
-        <div class="col d-flex align-items-start">
-            <div>
-                <h3 class="fs-2">Распаковка архива</h3>
-                <p>Выберете архив который хотите распаковать и нажмите кнопку Загрузить.</p>
-                <form asp-action="AddFile" asp-controller="Home" asp-route-mode="1" method="post" enctype="multipart/form-data">
-                    <input type="file" name="uploadedFile" />
-                    <br><br>
-                    <input type="submit" value="Загрузить" />
-                </form>
-            </div>
-        </div>
-    </div>
+﻿<link href="~/css/progressbar.css" rel="stylesheet" />
+
+<script>
+	function showDiv() {
+		document.getElementById('welcomeDiv').style.display = "block";
+	}
+</script>
+
+<div class="container px-4 py-5">
+	<h2 class="pb-2 border-bottom">Выберите файл для загрузки</h2>
+	<div class="row g-4 py-5 row-cols-1 row-cols-lg-2">
+		<div class="col d-flex align-items-start">
+			<div>
+				<h3 class="fs-2">Сжатие файла</h3>
+				<p>Выберете файл который хотите сжать и нажмите кнопку Загрузить.</p>
+				<form asp-action="AddFile" asp-controller="Home" asp-route-mode="0" method="post" enctype="multipart/form-data">
+					<input type="file" name="uploadedFile" />
+					<br><br>
+					<input type="submit" value="Загрузить" onclick="showDiv()" name="answer" />
+				</form>
+			</div>
+		</div>
+		<div class="col d-flex align-items-start">
+			<div>
+				<h3 class="fs-2">Распаковка архива</h3>
+				<p>Выберете архив который хотите распаковать и нажмите кнопку Загрузить.</p>
+				<form asp-action="AddFile" asp-controller="Home" asp-route-mode="1" method="post" enctype="multipart/form-data">
+					<input type="file" name="uploadedFile" />
+					<br><br>
+					<input type="submit" value="Загрузить" onclick="showDiv()" name="answer" />
+				</form>
+			</div>
+		</div>
+	</div>
+	<div id="welcomeDiv" style="display:none;font-size:large" class="answer_list">
+		<div class="d-flex align-items-center justify-content-center overlay">
+			<div class="spinner-border"></div>
+			<div class="text-center">&nbspЗагрузка... </div>
+
+		</div>
+	</div>
 </div>
